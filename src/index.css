@@ -1,0 +1,92 @@
+@import url(https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+:root {
+  --green-clr: #1dbd51;
+  --black-clr: #030b0d;
+  --grey-clr: #656565;
+}
+body {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  background-color: var(--green-clr);
+}
+
+.App {
+  width: clamp(250px, 90vw, 500px);
+  background-color: var(--black-clr);
+  padding: 2rem 1rem;
+  box-shadow: 0 0 .5rem rgba(0, 0, 0, .7),
+              0 0 1rem rgba(0, 0, 0, .7);
+}
+
+.form-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.form-group input,
+button {
+  padding: .3rem;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  border-bottom: 2px solid var(--green-clr);
+  color: var(--green-clr);
+  font-size: 1rem;
+}
+.form-group button {
+  outline: 2px solid var(--green-clr);
+  border: none;
+  padding: .3rem 1rem;
+  cursor: pointer;
+}
+.form-group button:hover {
+  background-color: var(--green-clr);
+  color: #fff;
+}
+.form-group button:active { transform: scale(.9); }
+
+.todo-list {
+  margin-top: 3rem;
+}
+.single {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--green-clr);
+}
+.single p {
+  color: var(--green-clr);
+  word-break: break-all;
+}
+
+.set {
+  display: flex;
+  align-items: center;
+}
+
+.single button {
+  margin: 0 .5rem;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.single.done p {
+  text-decoration: line-through;
+  color: var(--grey-clr);
+}
+
+@media (max-width: 425px) {
+  * { font-size: .9rem; }
+
+  .form-group button,
+  .form-group input { font-size: .8rem; }
+}
